@@ -16,7 +16,7 @@ work/
 *.mpf
 
 # Google Drive Destkop structured files
-.ini
+*.ini
 
 # Node artifact files
 node_modules/
