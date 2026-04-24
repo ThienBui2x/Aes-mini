@@ -3,6 +3,21 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
+# Quartus/ModelSim  database folder
+db/
+work/
+
+# Quartus/ModelSim database files
+*.mti
+*.qpf
+*.qsf
+*.qws
+*.bak
+*.mpf
+
+# Google Drive Destkop structured files
+.ini
+
 # Node artifact files
 node_modules/
 dist/
@@ -48,3 +63,4 @@ Thumbs.db
 *.mov
 *.wmv
 
+*.ini
