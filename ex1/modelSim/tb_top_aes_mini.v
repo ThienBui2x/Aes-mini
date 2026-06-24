@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-
+/*
 module tb_top_aes_mini;
 
     reg  [63:0] plaintext;
@@ -40,4 +40,103 @@ module tb_top_aes_mini;
         $stop;
     end
 
+endmodule
+*/
+
+module tb_top_aes_mini;
+
+    // ==================================================
+    // DUT Inputs
+    // ==================================================
+
+    reg         clk;
+    reg         rst;
+    reg         start;
+
+    reg [63:0]  plaintext;
+    reg [63:0]  master_key;
+
+    // ==================================================
+    // DUT Outputs
+    // ==================================================
+
+    wire [63:0] ciphertext;
+    wire        done;
+
+    // ==================================================
+    // Instantiate DUT
+    // ==================================================
+
+    top_aes_mini dut (
+        .clk(clk),
+        .rst(rst),
+        .start(start),
+
+        .plaintext(plaintext),
+        .master_key(master_key),
+
+        .ciphertext(ciphertext),
+        .done(done)
+    );
+
+    // ==================================================
+    // Clock generation
+    // ==================================================
+
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;     // 100 MHz
+    end
+
+    // ==================================================
+    // Stimulus
+    // ==================================================
+
+    initial begin
+
+        // ----------------------------------------------
+        // Initialize
+        // ----------------------------------------------
+
+        rst        = 1;
+        start      = 0;
+
+        plaintext  = 64'h0123456789ABCDEF;
+        master_key = 64'h0F1E2D3C4B5A6978;
+
+        // ----------------------------------------------
+        // Reset
+        // ----------------------------------------------
+
+        #20;
+        rst = 0;
+
+        // ----------------------------------------------
+        // Start encryption
+        // ----------------------------------------------
+
+        @(posedge clk);
+        start = 1;
+
+        @(posedge clk);
+        start = 0;
+
+        // ----------------------------------------------
+        // Wait for completion
+        // ----------------------------------------------
+
+        wait(done == 1);
+
+        $display("====================================");
+        $display("Encryption Finished");
+        $display("Plaintext  = %h", plaintext);
+        $display("Key        = %h", master_key);
+        $display("Ciphertext = %h", ciphertext);
+        $display("Time       = %0t ns", $time);
+        $display("====================================");
+
+        #20;
+
+        $stop;
+    end
 endmodule
