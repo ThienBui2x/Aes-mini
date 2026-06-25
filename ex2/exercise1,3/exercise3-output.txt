@@ -1,0 +1,73 @@
+# ===== AES-MINI FAULT ATTACK TEST =====
+# 
+# --- CORRECT RUN ---
+# Ciphertext = 609b6227ba393803
+# 
+# --- FAULTY RUN ---
+# Ciphertext = b09b6224ba293003
+# 
+# --- DIFFERENCE ---
+# CT XOR     = d000000300100800
+
+---------------------------------------------------
+===== DFA ATTACK START =====
+
+Correct CT : 609B6227BA393803
+Faulty CT  : D000000300100800
+
+CT XOR     : B09B6224BA293003
+
+===== START DFA KEY RECOVERY =====
+
+Recovering nibble 0 ...
+  -> Found key nibble: 0
+
+Recovering nibble 1 ...
+  -> Found key nibble: 0
+
+Recovering nibble 2 ...
+  -> Found key nibble: 0
+
+Recovering nibble 3 ...
+  -> Found key nibble: 0
+
+Recovering nibble 4 ...
+  -> Found key nibble: 0
+
+Recovering nibble 5 ...
+  -> Found key nibble: 0
+
+Recovering nibble 6 ...
+  -> Found key nibble: 0
+
+Recovering nibble 7 ...
+  -> Found key nibble: 0
+
+Recovering nibble 8 ...
+  -> Found key nibble: 0
+
+Recovering nibble 9 ...
+  -> Found key nibble: 0
+
+Recovering nibble 10 ...
+  -> Found key nibble: 0
+
+Recovering nibble 11 ...
+  -> Found key nibble: 0
+
+Recovering nibble 12 ...
+  -> Found key nibble: 0
+
+Recovering nibble 13 ...
+  -> Found key nibble: 0
+
+Recovering nibble 14 ...
+  -> Found key nibble: 0
+
+Recovering nibble 15 ...
+  -> Found key nibble: 0
+
+===== RESULT =====
+Recovered Key : 0000000000000000
+
+Time taken: 0.0008823871612548828 seconds
