@@ -1,73 +1,10 @@
-# ===== AES-MINI FAULT ATTACK TEST =====
-# 
-# --- CORRECT RUN ---
-# Ciphertext = 609b6227ba393803
-# 
-# --- FAULTY RUN ---
-# Ciphertext = b09b6224ba293003
-# 
-# --- DIFFERENCE ---
-# CT XOR     = d000000300100800
-
----------------------------------------------------
-===== DFA ATTACK START =====
-
-Correct CT : 609B6227BA393803
-Faulty CT  : D000000300100800
-
-CT XOR     : B09B6224BA293003
-
-===== START DFA KEY RECOVERY =====
-
-Recovering nibble 0 ...
-  -> Found key nibble: 0
-
-Recovering nibble 1 ...
-  -> Found key nibble: 0
-
-Recovering nibble 2 ...
-  -> Found key nibble: 0
-
-Recovering nibble 3 ...
-  -> Found key nibble: 0
-
-Recovering nibble 4 ...
-  -> Found key nibble: 0
-
-Recovering nibble 5 ...
-  -> Found key nibble: 0
-
-Recovering nibble 6 ...
-  -> Found key nibble: 0
-
-Recovering nibble 7 ...
-  -> Found key nibble: 0
-
-Recovering nibble 8 ...
-  -> Found key nibble: 0
-
-Recovering nibble 9 ...
-  -> Found key nibble: 0
-
-Recovering nibble 10 ...
-  -> Found key nibble: 0
-
-Recovering nibble 11 ...
-  -> Found key nibble: 0
-
-Recovering nibble 12 ...
-  -> Found key nibble: 0
-
-Recovering nibble 13 ...
-  -> Found key nibble: 0
-
-Recovering nibble 14 ...
-  -> Found key nibble: 0
-
-Recovering nibble 15 ...
-  -> Found key nibble: 0
-
-===== RESULT =====
-Recovered Key : 0000000000000000
-
-Time taken: 0.0008823871612548828 seconds
+-----------------------------------------------------------------------------
+Correct Ciphertext:  [6, 0, 9, 11, 6, 2, 2, 7, 11, 10, 3, 9, 3, 8, 0, 3]
+Faulty Ciphertext : [0, 8, 3, 13, 13, 14, 4, 14, 14, 1, 10, 4, 15, 1, 9, 15]
+-----------------------------------------------------------------------------
+Start time: Thu Jul  2 21:53:50 2026
+Candidates =  {0: [10, 12], 13: [1, 8], 10: [3, 10], 7: [1, 3, 8, 10], 12: [1, 13], 9: [1, 10], 6: [1, 2, 4, 7], 3: [8, 11, 13, 14], 8: [8, 11, 13, 14], 5: [4, 5, 8, 9], 2: [1, 5, 11, 15], 15: [7, 11], 4: [5, 14], 1: [2, 10], 14: [2, 11], 11: [5, 8]}
+-----------------------------------------------------------------------------
+Found matching master key:  [15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+End time: Thu Jul  2 21:59:21 2026
+Total elapsed: 330.91 seconds
