@@ -1,0 +1,6 @@
+plaintexts_path:str = "/scratch/net4/HOS/Traces/plaintexts.txt"
+ciphertexts_path: str = "/scratch/net4/HOS/Traces/ciphertexts.txt"
+traces_path: str = "/scratch/net4/HOS/Traces/traces.txt"
+traces_path_npy: str = "/scratch/net4/HOS/Traces/traces.npy"
+plaintexts_path_npy: str = "/scratch/net4/HOS/Traces/plaintexts.npy"
+ciphertexts_path_npy: str = "/scratch/net4/HOS/Traces/ciphertexts.npy"
